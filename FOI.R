@@ -19,3 +19,13 @@ output <- as.data.frame(ode(y = initial_state_values,
                             func = sir_model,
                             parms = parameters))
 output
+output_long <- melt(as.data.frame(output), id = "time") 
+
+ggplot(data = output_long,                                               
+       aes(x = time, y = value, colour = variable, group = variable)) +   
+  
+  geom_line() +                                                          
+  xlab("Time (days)")+                                                  
+  ylab("Number of people") +                                             
+  
+  labs(colour = "Compartment")  
