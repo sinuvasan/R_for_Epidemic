@@ -29,3 +29,4 @@ ggplot(data = output_long,
   ylab("Number of people") +                                             
   
   labs(colour = "Compartment")  
+
